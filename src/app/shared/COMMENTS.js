@@ -5,6 +5,7 @@ export const COMMENTS = [
         rating: 5,
         text: 'The grass was indeed greener here than our last campsite.',
         author: 'Simon Hunt',
+        //note that date is stored in ISO 8601, which is interantional standard for storing timestamps 
         date: '2018-10-25T16:30Z'
     },
     {
