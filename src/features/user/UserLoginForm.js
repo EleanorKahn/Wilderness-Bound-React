@@ -9,7 +9,7 @@ import {
     Label,
     Button
 } from 'reactstrap';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import defaultAvatar from '../../app/assets/img/unicorn.png';
 import validateUserLoginForm from '../../utils/validateUserLoginForm';
 
@@ -28,6 +28,7 @@ const UserLoginForm = () => {
         dispatch(setCurrentUser(currentUser));
         setLoginModalOpen(false);
     }
+    
     return (
         <>
             <span className='navbar-text ml-auto'>
@@ -66,16 +67,24 @@ const UserLoginForm = () => {
                                 <Field 
                                     id="username" 
                                     name="username" 
-                                    placeholder="Username" className="form-control" 
+                                    placeholder="Username" 
+                                    className="form-control" 
                                 />
+                                <ErrorMessage name="username">
+                                    {(msg) => <p className='text-danger'>{msg}</p>}
+                                </ErrorMessage>
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor='password'>Password</Label>
                                 <Field 
                                     id="password" 
                                     name="password" 
-                                    placeholder="Password" className="form-control" 
+                                    placeholder="Password" 
+                                    className="form-control" 
                                 />
+                                <ErrorMessage name="password">
+                                    {(msg) => <p className='text-danger'>{msg}</p>}
+                                </ErrorMessage>
                             </FormGroup>
                             <Button type="submit" color='primary'>Login</Button>
                         </Form>
