@@ -2,7 +2,7 @@ import { Col, Row } from "reactstrap";
 //import DisplayCard from "./DisplayCard";
 import { selectFeaturedCampsite } from "../campsites/campsitesSlice";
 import { selectFeaturedPromotion} from "../promotions/promotionsSlice";
-import { selectFeaturedPartner } from "../partners/partnerSlice";
+import { selectFeaturedPartner } from "../partners/partnersSlice";
 import AnimatedDisplayCard from "./AnimatedDisplayCard";
 import { useSelector } from "react-redux";
 

@@ -3,6 +3,8 @@ import CampsiteCard from "./CampsiteCard";
 import { selectAllCampsites } from "./campsitesSlice";
 import { useSelector } from "react-redux";
 
+//NB - getting an error about unique id. Would something like nanoid help? Investigate
+
 const CampsitesList = () => {
     const campsites = useSelector(selectAllCampsites);
     console.log("campsites", campsites);
