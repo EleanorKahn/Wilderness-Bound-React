@@ -1,4 +1,6 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
@@ -8,8 +10,16 @@ import ContactPage from './pages/ContactPage';
 import HomePage from './pages/HomePage';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
 import AboutPage from './pages/AboutPage';
+import { fetchCampsites } from './features/campsites/campsitesSlice';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCampsites());
+    //technically we don't need to add dispatch to the dep array, but if we don't, React with throw error
+  }, [dispatch]);
+
   return (
     <div className="App">
       <Header />

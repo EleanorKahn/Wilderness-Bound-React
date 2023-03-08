@@ -1,15 +1,48 @@
-import { CAMPSITES } from "../../app/shared/oldData/CAMPSITES";
-import { createSlice } from "@reduxjs/toolkit";
+//import { CAMPSITES } from "../../app/shared/oldData/CAMPSITES";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { baseUrl } from "../../app/shared/baseUrl";
+import { mapImageUrl } from "../../utils/mapImageURL";
 
 const initialState = {
-    campsitesArray: CAMPSITES
+    //we will assume that this data will be loaded from json-server, so the initial state should be set to an empty array
+    campsitesArray: [],
+    isLoading: true,
+    errMsg: "",
 };
+
+
+export const fetchCampsites = createAsyncThunk("campsites/fetchCampsites", 
+    async () => {
+        const res = await fetch(baseUrl + "campsites");
+        //.ok property is based on http status code
+        if (!res.ok) {
+            return Promise.reject("Unable to fetch, status: " + res.status);
+        }
+        const data = await res.json();
+        return data;
+    }
+);
 
 //createSlice will return an object, stored as campsitesSlice object
 //campsitesSlice object has reducer method
 const campsitesSlice = createSlice({
     name: 'campsites',
-    initialState
+    initialState,
+    reducers: {},
+    extraReducers: {
+        [fetchCampsites.pending]: (state) => {
+            state.isLoading = true;
+        },
+        [fetchCampsites.fulfilled]: (state, action) => {
+            state.isLoading = false;
+            state.errMsg = "";
+            state.campsitesArray = mapImageUrl(action.payload);
+        },
+        [fetchCampsites.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.errMsg = action.error ? action.error.message : "Fetch failed";
+        }
+    }
 });
 
 export const campsitesReducer = campsitesSlice.reducer;
