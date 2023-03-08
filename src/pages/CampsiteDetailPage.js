@@ -17,25 +17,20 @@ const CampsiteDetailPage = () => {
     //inline callback for useSelector just for awareness that it exists and is done, but not most organized way
     const isLoading = useSelector((state) => state.campsites.isLoading);
     const errMsg = useSelector((state) => state.campsites.errMsg);
-    let content = null;
-
-    if (isLoading) {
-        content = <Loading />
-    } else if (errMsg) {
-        content = <Error errMsg={errMsg} />
-    } else {
-        content = (
-            <>
-                <CampsiteDetail campsite={campsite} />
-                <CommentsList campsiteId={campsiteId} />
-            </>
-        );
-    }
-
+    
     return (
         <Container>
-            {campsite && <SubHeader current={campsite.name} detail={true} />}
-            <Row>{content}</Row>
+            (isLoading ? (
+                <Loading />
+            ) : errMsg ? (
+                <Error errMsg={errMsg} />
+            )) : (
+                {campsite && <SubHeader current={campsite.name} detail={true} />}
+                <Row>
+                    <CampsiteDetail campsite={campsite} />
+                    <CommentsList campsiteId={campsiteId} />
+                </Row>
+            )
         </Container>
     );
 };
