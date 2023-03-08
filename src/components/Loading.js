@@ -1,4 +1,4 @@
-import { Col } from 'reacstrap';
+import { Col } from 'reactstrap';
 
 const Loading = () => {
     return (
