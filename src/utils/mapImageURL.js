@@ -6,5 +6,5 @@ export const mapImageUrl = (arr) => {
             ...item,
             image: baseUrl + item.image,
         }
-    })
-}
+    });
+};

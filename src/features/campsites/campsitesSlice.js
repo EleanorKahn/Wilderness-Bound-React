@@ -13,12 +13,12 @@ const initialState = {
 
 export const fetchCampsites = createAsyncThunk("campsites/fetchCampsites", 
     async () => {
-        const res = await fetch(baseUrl + "campsites");
+        const response = await fetch(baseUrl + "campsites");
         //.ok property is based on http status code
-        if (!res.ok) {
-            return Promise.reject("Unable to fetch, status: " + res.status);
+        if (!response.ok) {
+            return Promise.reject("Unable to fetch, status: " + response.status);
         }
-        const data = await res.json();
+        const data = await response.json();
         return data;
     }
 );
