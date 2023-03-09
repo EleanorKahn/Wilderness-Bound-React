@@ -18,21 +18,34 @@ const CampsiteDetailPage = () => {
     const isLoading = useSelector((state) => state.campsites.isLoading);
     const errMsg = useSelector((state) => state.campsites.errMsg);
     
-    return (
+    return isLoading ? (
+        <Loading />
+    ) : errMsg ? (
+        <Error errMsg={errMsg} />
+    ) : (
         <Container>
-            (isLoading ? (
-                <Loading />
-            ) : errMsg ? (
-                <Error errMsg={errMsg} />
-            )) : (
-                {campsite && <SubHeader current={campsite.name} detail={true} />}
-                <Row>
-                    <CampsiteDetail campsite={campsite} />
-                    <CommentsList campsiteId={campsiteId} />
-                </Row>
-            )
+            {campsite && <SubHeader current={campsite.name} detail={true} />}
+            <Row>
+                <CampsiteDetail campsite={campsite} />                  <CommentsList campsiteId={campsiteId} />
+            </Row>
         </Container>
     );
+
+    // return (
+    //     <Container> 
+    //         {isLoading ? (
+    //             <Loading />
+    //         ) : errMsg ? (
+    //             <Error errMsg={errMsg} />
+    //         ) : ( 
+    //             campsite && <SubHeader current={campsite.name} detail={true} />
+    //                 <Row>
+    //                     <CampsiteDetail campsite={campsite} />
+    //                     <CommentsList campsiteId={campsiteId} />
+    //                 </Row>
+    //         )};
+    //     </Container>
+    // );
 };
 
 export default CampsiteDetailPage;
