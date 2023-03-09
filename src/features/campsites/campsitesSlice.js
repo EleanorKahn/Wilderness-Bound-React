@@ -58,5 +58,10 @@ export const selectCampsiteById = (id) => (state) => {
 };
 
 export const selectFeaturedCampsite = (state) => {
-    return state.campsites.campsitesArray.find((campsite) => campsite.featured);
+    //instead of returning just a campsite object, now returning new object that has campsite object as one of its properties. Also has 2 other properties which know the 
+    return {
+        featuredItem: state.campsites.campsitesArray.find((campsite) => campsite.featured),
+        isLoading: state.campsites.isLoading,
+        errMsg: state.campsites.errMsg
+    }
 };
