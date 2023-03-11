@@ -12,9 +12,9 @@ const CampsiteDetailPage = () => {
 
     //should contain an integer that corresponds to a campsite object's id property
     const { campsiteId } = useParams();
+    console.log(campsiteId);
     const campsite = useSelector(selectCampsiteById(campsiteId));
     
-    //inline callback for useSelector just for awareness that it exists and is done, but not most organized way
     const isLoading = useSelector((state) => state.campsites.isLoading);
     const errMsg = useSelector((state) => state.campsites.errMsg);
     
@@ -26,26 +26,11 @@ const CampsiteDetailPage = () => {
         <Container>
             {campsite && <SubHeader current={campsite.name} detail={true} />}
             <Row>
-                <CampsiteDetail campsite={campsite} />                  <CommentsList campsiteId={campsiteId} />
+                <CampsiteDetail campsite={campsite} />                  
+                <CommentsList campsiteId={campsiteId} />
             </Row>
         </Container>
     );
-
-    // return (
-    //     <Container> 
-    //         {isLoading ? (
-    //             <Loading />
-    //         ) : errMsg ? (
-    //             <Error errMsg={errMsg} />
-    //         ) : ( 
-    //             campsite && <SubHeader current={campsite.name} detail={true} />
-    //                 <Row>
-    //                     <CampsiteDetail campsite={campsite} />
-    //                     <CommentsList campsiteId={campsiteId} />
-    //                 </Row>
-    //         )};
-    //     </Container>
-    // );
 };
 
 export default CampsiteDetailPage;

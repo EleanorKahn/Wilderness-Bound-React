@@ -13,6 +13,7 @@ import AboutPage from './pages/AboutPage';
 import { fetchCampsites } from './features/campsites/campsitesSlice';
 import { fetchPartners } from './features/partners/partnersSlice';
 import { fetchPromotions } from './features/promotions/promotionsSlice';
+import { fetchComments } from './features/comments/commentsSlice';
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function App() {
     dispatch(fetchCampsites());
     dispatch(fetchPartners());
     dispatch(fetchPromotions());
+    dispatch(fetchComments());
     //technically we don't need to add dispatch to the dep array, but if we don't, React with throw error
   }, [dispatch]);
 
