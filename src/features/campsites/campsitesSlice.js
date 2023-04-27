@@ -29,19 +29,21 @@ const campsitesSlice = createSlice({
     name: 'campsites',
     initialState,
     reducers: {},
-    extraReducers: {
-        [fetchCampsites.pending]: (state) => {
+    extraReducers: (builder) => {
+        builder
+        .addCase(fetchCampsites.pending, (state) => {
             state.isLoading = true;
-        },
-        [fetchCampsites.fulfilled]: (state, action) => {
+            state.errMsg = "";
+        })
+        .addCase(fetchCampsites.fulfilled, (state, action) => {
             state.isLoading = false;
             state.errMsg = "";
             state.campsitesArray = mapImageUrl(action.payload);
-        },
-        [fetchCampsites.rejected]: (state, action) => {
+        })
+        .addCase(fetchCampsites.rejected, (state, action) => {
             state.isLoading = false;
             state.errMsg = action.error ? action.error.message : "Fetch failed";
-        }
+        })
     }
 });
 
