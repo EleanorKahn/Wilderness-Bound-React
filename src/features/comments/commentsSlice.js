@@ -48,7 +48,6 @@ const commentsSlice = createSlice({
         builder
         .addCase(fetchComments.pending, (state) => {
             state.isLoading = true;
-            state.errMsg = "";
         })
         .addCase(fetchComments.fulfilled, (state, action) => {
             state.isLoading = false;

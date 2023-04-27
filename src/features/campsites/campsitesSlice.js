@@ -33,7 +33,6 @@ const campsitesSlice = createSlice({
         builder
         .addCase(fetchCampsites.pending, (state) => {
             state.isLoading = true;
-            state.errMsg = "";
         })
         .addCase(fetchCampsites.fulfilled, (state, action) => {
             state.isLoading = false;
