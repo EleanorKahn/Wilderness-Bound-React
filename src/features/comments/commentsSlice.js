@@ -44,23 +44,25 @@ const commentsSlice = createSlice({
             state.commentsArray.push(newComment);
         }
     },
-    extraReducers: {
-        [fetchComments.pending]: (state) => {
+    extraReducers: (builder) => {
+        builder
+        .addCase(fetchComments.pending, (state) => {
             state.isLoading = true;
-        },
-        [fetchComments.fulfilled]: (state, action) => {
+            state.errMsg = "";
+        })
+        .addCase(fetchComments.fulfilled, (state, action) => {
             state.isLoading = false;
             state.errMsg = "";
             state.commentsArray = action.payload;
-        },
-        [fetchComments.rejected]: (state, action) => {
+        })
+        .addCase(fetchComments.rejected, (state, action) => {
             state.isLoading = false;
             state.errMsg = action.error ? action.error.message : "Fetch failed";
-        },
-        [postComment.rejected]: (state, action) => {
+        })
+        .addCase(postComment.rejected, (state, action) => {
             alert("Your comment could not be posted\nError: " + 
             (action.error ? action.error.message : "Fetch failed"));
-        }
+        })
     }
 });
 
