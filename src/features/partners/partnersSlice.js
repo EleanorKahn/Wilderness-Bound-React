@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { baseUrl } from '../../app/shared/baseUrl';
-// import { PARTNERS } from '../../app/shared/oldData/PARTNERS';
 import { mapImageUrl } from '../../utils/mapImageURL';
 
 export const fetchPartners = createAsyncThunk("partners/fetchPartners", 

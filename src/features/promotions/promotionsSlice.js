@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { PROMOTIONS } from '../../app/shared/oldData/PROMOTIONS';
 import { baseUrl } from '../../app/shared/baseUrl';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { mapImageUrl } from '../../utils/mapImageURL';

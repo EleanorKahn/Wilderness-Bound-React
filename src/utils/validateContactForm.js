@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const validateContactForm = (values) => {
     const { firstName, lastName, phoneNum, email } = values;
