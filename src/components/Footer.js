@@ -1,49 +1,49 @@
-import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="site-footer">
+        <footer className='site-footer'>
             <Container>
                 <Row>
-                    <Col xs={{ size: 4, offset: 1 }} sm="2">
+                    <Col xs={{ size: 4, offset: 1 }} sm='2'>
                         <h5>Links</h5>
-                        <ul className="list-unstyled">
+                        <ul className='list-unstyled'>
                             <li>
-                                <Link to="/">Home</Link>
+                                <Link to='/'>Home</Link>
                             </li>
                             <li>
-                                <Link to="/directory">Directory</Link>
+                                <Link to='/directory'>Directory</Link>
                             </li>
                             <li>
-                                <Link to="/about">About</Link>
+                                <Link to='/about'>About</Link>
                             </li>
                             <li>
-                                <Link to="/contact">Contact</Link>
+                                <Link to='/contact'>Contact</Link>
                             </li>
                         </ul>
                     </Col>
-                    <Col xs="6" sm="3" className="text-center">
+                    <Col xs='6' sm='3' className='text-center'>
                         <h5>Social</h5>
                         <a
-                            className="btn btn-social-icon btn-instagram"
-                            href="http://instagram.com/"
+                            className='btn btn-social-icon btn-instagram'
+                            href='http://instagram.com/'
                         >
-                            <i className="fa fa-instagram" />
-                        </a>{" "}
+                            <i className='fa fa-instagram' />
+                        </a>{' '}
                         <a
-                            className="btn btn-social-icon btn-facebook"
-                            href="http://www.facebook.com/"
+                            className='btn btn-social-icon btn-facebook'
+                            href='http://www.facebook.com/'
                         >
-                            <i className="fa fa-facebook" />
-                        </a>{" "}
+                            <i className='fa fa-facebook' />
+                        </a>{' '}
                         <a
                             className='btn btn-social-icon btn-twitter'
                             href='http://twitter.com/'
                         >
                             <i className='fa fa-twitter' />
                         </a>{' '}
-                        {/* the {" "} is a JS string with a single space, and it's used to explicitly create a space character */}
+                        {/* the {' '} is a JS string with a single space, and it's used to explicitly create a space character */}
                         <a
                             className='btn btn-social-icon btn-google'
                             href='http://youtube.com/'
@@ -51,21 +51,21 @@ const Footer = () => {
                             <i className='fa fa-youtube' />
                         </a>
                     </Col>
-                    <Col sm="4" className="text-center">
+                    <Col sm='4' className='text-center'>
                         <a
-                            role="button"
-                            className="btn btn-link"
-                            href="tel:+12065551234"
+                            role='button'
+                            className='btn btn-link'
+                            href='tel:+12065551234'
                         >
-                            <i className="fa fa-phone" /> 1-206-555-1234
+                            <i className='fa fa-phone' /> 1-206-555-1234
                         </a>
                         <br />
                         <a
-                            role="button"
-                            className="btn btn-link"
-                            href="mailto:notreal@notreal.co"
+                            role='button'
+                            className='btn btn-link'
+                            href='mailto:notreal@notreal.co'
                         >
-                            <i className="fa fa-envelope-o" /> campsites@nucamp.com
+                            <i className='fa fa-envelope-o' /> campsites@nucamp.com
                         </a>
                     </Col>
                 </Row>

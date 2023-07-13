@@ -1,5 +1,5 @@
-import { Col, Row, Breadcrumb, BreadcrumbItem } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Col, Row, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const SubHeader = ({ current, detail }) => {
     return (
@@ -7,11 +7,11 @@ const SubHeader = ({ current, detail }) => {
             <Col>
                 <Breadcrumb>
                     <BreadcrumbItem>
-                        <Link to="/">Home</Link>
+                        <Link to='/'>Home</Link>
                     </BreadcrumbItem>
                     {detail && (
                         <BreadcrumbItem>
-                            <Link to="/directory">Directory</Link>
+                            <Link to='/directory'>Directory</Link>
                         </BreadcrumbItem>
                     )}
                     <BreadcrumbItem active>{current}</BreadcrumbItem>
