@@ -1,11 +1,11 @@
-import { Col, Row } from "reactstrap";
-import { selectFeaturedCampsite } from "../campsites/campsitesSlice";
-import { selectFeaturedPromotion} from "../promotions/promotionsSlice";
-import { selectFeaturedPartner } from "../partners/partnersSlice";
-import AnimatedDisplayCard from "./AnimatedDisplayCard";
-import { useSelector } from "react-redux";
-import Error from "../../components/Error";
-import Loading from "../../components/Loading";
+import { Col, Row } from 'reactstrap';
+import { selectFeaturedCampsite } from '../campsites/campsitesSlice';
+import { selectFeaturedPromotion} from '../promotions/promotionsSlice';
+import { selectFeaturedPartner } from '../partners/partnersSlice';
+import AnimatedDisplayCard from './AnimatedDisplayCard';
+import { useSelector } from 'react-redux';
+import Error from '../../components/Error';
+import Loading from '../../components/Loading';
 
 const DisplayList = () => {
     const items = useSelector((state) => [
@@ -14,7 +14,7 @@ const DisplayList = () => {
         selectFeaturedPartner(state)
     ]);
 
-    console.log("display items", items);
+    console.log('display items', items);
 
     return (
         <Row>
@@ -28,7 +28,7 @@ const DisplayList = () => {
                 }
                 return (
                     featuredItem && (
-                        <Col md className="m-1" key={idx}>
+                        <Col md className='m-1' key={idx}>
                             <AnimatedDisplayCard item={featuredItem}></AnimatedDisplayCard>
                         </Col>
                     )
