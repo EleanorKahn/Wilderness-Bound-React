@@ -1,14 +1,14 @@
-import { Container, Col, Row } from "reactstrap";
-import SubHeader from "../components/SubHeader";
-import ContactForm from "../components/ContactForm";
+import { Container, Col, Row } from 'reactstrap';
+import SubHeader from '../components/SubHeader';
+import ContactForm from '../components/ContactForm';
 
 const ContactPage = () => {
     return (
         <Container>
-            <SubHeader current="Contact Us"></SubHeader>
+            <SubHeader current='Contact Us'></SubHeader>
 
-            <Row className="row-content align-items-center">
-                <Col sm="4">
+            <Row className='row-content align-items-center'>
+                <Col sm='4'>
                     <h5>Our Address</h5>
                     <address>
                         1 Nucamp Way
@@ -37,12 +37,12 @@ const ContactPage = () => {
                 </Col>
             </Row>
             
-            <Row className="row-content">
-                <Col xs="12">
+            <Row className='row-content'>
+                <Col xs='12'>
                     <h2>Send Us Your Feedback</h2>
                     <hr />
                 </Col>
-                <Col md="10">
+                <Col md='10'>
                     <ContactForm />
                 </Col>
             </Row>

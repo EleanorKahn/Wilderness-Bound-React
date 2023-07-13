@@ -1,13 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { baseUrl } from '../../app/shared/baseUrl';
-// import { PARTNERS } from '../../app/shared/oldData/PARTNERS';
 import { mapImageUrl } from '../../utils/mapImageURL';
 
-export const fetchPartners = createAsyncThunk("partners/fetchPartners", 
+export const fetchPartners = createAsyncThunk('partners/fetchPartners', 
     async () => {
-        const response = await fetch(baseUrl + "partners");
+        const response = await fetch(baseUrl + 'partners');
         if (!response.ok) {
-            return Promise.reject("Unable to fetch", response.status);
+            return Promise.reject('Unable to fetch', response.status);
         }
         const data = await response.json();
         return data;
@@ -18,7 +17,7 @@ const initialState = {
     // we can assume this data will be loaded by json-server, so we cn initialize to empty array
     partnersArray: [],
     isLoading: true,
-    errMsg: "",
+    errMsg: '',
 };
 
 
@@ -33,12 +32,12 @@ const partnersSlice = createSlice({
         })
         .addCase(fetchPartners.fulfilled, (state, action) => {
             state.isLoading = false;
-            state.errMsg = "";
+            state.errMsg = '';
             state.partnersArray = mapImageUrl(action.payload);
         })
         .addCase(fetchPartners.rejected, (state, action) => {
             state.isLoading = false;
-            state.errMsg = action.error ? action.error.message : "Fetch failed";
+            state.errMsg = action.error ? action.error.message : 'Fetch failed';
         })
     }
 });

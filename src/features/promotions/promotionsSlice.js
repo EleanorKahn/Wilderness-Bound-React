@@ -4,10 +4,10 @@ import { baseUrl } from '../../app/shared/baseUrl';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { mapImageUrl } from '../../utils/mapImageURL';
 
-export const fetchPromotions = createAsyncThunk("promotions/fetchPromotions", async () => {
-    const response = await fetch(baseUrl + "promotions");
+export const fetchPromotions = createAsyncThunk('promotions/fetchPromotions', async () => {
+    const response = await fetch(baseUrl + 'promotions');
     if (!response.ok) {
-        return Promise.reject("Unable to fetch", response.status);
+        return Promise.reject('Unable to fetch', response.status);
     }
     const data = response.json();
     return data;
@@ -16,7 +16,7 @@ export const fetchPromotions = createAsyncThunk("promotions/fetchPromotions", as
 const initialState = {
     promotionsArray: [],
     isLoading: true,
-    errMsg: "",
+    errMsg: '',
 };
 
 const promotionsSlice = createSlice({
@@ -30,12 +30,12 @@ const promotionsSlice = createSlice({
         })
         .addCase(fetchPromotions.fulfilled, (state, action) => {
             state.isLoading = false;
-            state.errMsg = "";
+            state.errMsg = '';
             state.promotionsArray = mapImageUrl(action.payload);
         })
         .addCase(fetchPromotions.rejected, (state, action) => {
             state.isLoading = false;
-            state.errMsg = action.error ? action.error.message : "Fetch failed";
+            state.errMsg = action.error ? action.error.message : 'Fetch failed';
         })
     }
 });
