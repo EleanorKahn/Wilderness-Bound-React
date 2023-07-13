@@ -5,19 +5,19 @@ export const validateContactForm = (values) => {
     const errors = {};
 
     if (!firstName) {
-        errors.firstName = "Required";
+        errors.firstName = 'Required';
     } else if (firstName.length < 2) {
-        errors.firstName = "Must be at least 2 characters";
+        errors.firstName = 'Must be at least 2 characters';
     } else if (firstName.length > 15) {
-        errors.firstName = "Must be 15 characters or fewer";
+        errors.firstName = 'Must be 15 characters or fewer';
     } 
 
     if (!lastName) {
-        errors.lastName = "Required";
+        errors.lastName = 'Required';
     } else if (lastName.length < 2) {
-        errors.lastName = "Must be at least 2 characters";
+        errors.lastName = 'Must be at least 2 characters';
     } else if (lastName.length > 15) {
-        errors.lastName = "Must be 15 characters or fewer";
+        errors.lastName = 'Must be 15 characters or fewer';
     }
 
     const reg = /^\d+$/;
