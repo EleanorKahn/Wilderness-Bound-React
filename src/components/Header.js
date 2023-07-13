@@ -8,7 +8,7 @@ import {
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import NucampLogo from '../app/assets/img/logo.png';
+import NucampLogo from '../app/assets/images/logo.png';
 import UserLoginForm from '../features/user/UserLoginForm';
 
 const Header = () => {

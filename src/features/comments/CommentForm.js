@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label } from "reactstrap";
-import { Formik, Field, Form, ErrorMessage } from "formik";
-import { validateCommentForm } from "../../utils/validateCommentForm";
-import { useDispatch } from "react-redux";
-import { postComment } from "./commentsSlice";
+import { useState } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label } from 'reactstrap';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { validateCommentForm } from '../../utils/validateCommentForm';
+import { useDispatch } from 'react-redux';
+import { postComment } from './commentsSlice';
 
 
 const CommentForm = ({ campsiteId }) => {
@@ -27,7 +27,7 @@ const CommentForm = ({ campsiteId }) => {
     return (
         <>
             <Button outline onClick={() => setModalOpen(true)}>
-                <i className="fa fa-pencil fa-lg" /> Add Comment
+                <i className='fa fa-pencil fa-lg' /> Add Comment
             </Button>
             <Modal isOpen={modalOpen}>
                 <ModalHeader toggle={() => setModalOpen(false)}>
@@ -37,19 +37,19 @@ const CommentForm = ({ campsiteId }) => {
                     <Formik 
                         initialValues={{ 
                             rating: undefined, 
-                            author: "", 
-                            commentText: "" 
+                            author: '', 
+                            commentText: '' 
                         }} 
                         onSubmit={handleSubmit}
                         validate={validateCommentForm}
                     >
                         <Form>
                             <FormGroup>
-                                <Label htmlFor="rating">Rating</Label>
+                                <Label htmlFor='rating'>Rating</Label>
                                 <Field
-                                    name="rating"
-                                    as="select"
-                                    className="form-control"
+                                    name='rating'
+                                    as='select'
+                                    className='form-control'
                                 >
                                     <option>Select...</option>
                                     <option>1</option>
@@ -58,31 +58,31 @@ const CommentForm = ({ campsiteId }) => {
                                     <option>4</option>
                                     <option>5</option>
                                 </Field>
-                                <ErrorMessage name="rating">
-                                    {(msg) => <p className="text-danger">{msg}</p>}
+                                <ErrorMessage name='rating'>
+                                    {(msg) => <p className='text-danger'>{msg}</p>}
                                 </ErrorMessage>
                             </FormGroup>
                             <FormGroup>
-                                <Label htmlFor="author">Your Name</Label>
+                                <Label htmlFor='author'>Your Name</Label>
                                 <Field
                                     name='author'
                                     placeholder='Your Name'
                                     className='form-control'
                                 />
-                                <ErrorMessage name="author">
-                                    {(msg) => <p className="text-danger">{msg}</p>}
+                                <ErrorMessage name='author'>
+                                    {(msg) => <p className='text-danger'>{msg}</p>}
                                 </ErrorMessage>
                             </FormGroup>
                             <FormGroup>
-                                <Label htmlFor="commentText">Comment</Label>
+                                <Label htmlFor='commentText'>Comment</Label>
                                 <Field
-                                    name="commentText"
-                                    as="textarea"
-                                    rows="12"
-                                    className="form-control"
+                                    name='commentText'
+                                    as='textarea'
+                                    rows='12'
+                                    className='form-control'
                                 />
                             </FormGroup>
-                            <Button type="submit" color="primary">
+                            <Button type='submit' color='primary'>
                                 Submit
                             </Button>
                         </Form>

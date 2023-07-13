@@ -38,7 +38,7 @@ const CampsitesList = () => {
                     <Col 
                         md="5"
                         className="m-4" 
-                        key={CampsiteCard.id}
+                        key={campsite.id}
                     >
                         <CampsiteCard campsite={campsite}/>
                     </Col>
