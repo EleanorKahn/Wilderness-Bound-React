@@ -1,14 +1,14 @@
-import { Col, Row, Container, Card, CardBody, CardHeader } from "reactstrap";
+import { Col, Row, Container, Card, CardBody, CardHeader } from 'reactstrap';
 import React from 'react';
-import SubHeader from "../components/SubHeader";
-import PartnersList from "../features/partners/PartnersList";
+import SubHeader from '../components/SubHeader';
+import PartnersList from '../features/partners/PartnersList';
 
 const AboutPage = () => {
     return (
         <Container>
-            <SubHeader current="About Us" />
-            <Row className="row-content">
-                <Col sm="6">
+            <SubHeader current='About Us' />
+            <Row className='row-content'>
+                <Col sm='6'>
                     <h3>Our Mission</h3>
                     <p>
                         We present a curated database of the best campsites in the
@@ -21,9 +21,9 @@ const AboutPage = () => {
                         campsites they have visited with each other.
                     </p>
                 </Col>
-                <Col sm="6">
+                <Col sm='6'>
                     <Card>
-                        <CardHeader className="bg-primary text-white">
+                        <CardHeader className='bg-primary text-white'>
                             <h3>Facts at a Glance</h3>
                         </CardHeader>
                         <CardBody>
@@ -41,16 +41,16 @@ const AboutPage = () => {
                     </Card>
                 </Col>
                 <Col>
-                    <Card className="bg-light mt-3">
+                    <Card className='bg-light mt-3'>
                         <CardBody>
-                            <blockquote className="blockquote">
+                            <blockquote className='blockquote'>
                                 <p>
                                     I will not follow where the path may lead, but I will go where there is no path, and I will leave a trail.
                                 </p>
-                                <footer className="blockquote-footer">
-                                    Muriel Strode, {" "}
-                                    <cite title="Source Title">
-                                        "Wind-Wafted Wild Flowers" - the Open Court, 1903
+                                <footer className='blockquote-footer'>
+                                    Muriel Strode, {' '}
+                                    <cite title='Source Title'>
+                                        'Wind-Wafted Wild Flowers' - the Open Court, 1903
                                     </cite>
                                 </footer>
                             </blockquote>
@@ -58,8 +58,8 @@ const AboutPage = () => {
                     </Card>
                 </Col>
             </Row>
-            <Row className="row-content">
-                <Col xs="12">
+            <Row className='row-content'>
+                <Col xs='12'>
                     <h3>Community Partners</h3>
                 </Col>
                 <PartnersList />
